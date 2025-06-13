@@ -1,6 +1,6 @@
-# 🎮 Aula: Criando um Jogo de Ping Pong no Computador com Unity!
+# 🎮 PROJETO: Criando um Jogo de Ping Pong no Computador com Unity!
 
-## 🌟 Objetivo da aula:
+## 🌟 Objetivo do projeto:
 
 Vamos criar um joguinho chamado **Pong**, parecido com ping pong. Cada jogador controla uma barra. A bola vai bater de um lado pro outro, e o objetivo é não deixar ela passar!
 
