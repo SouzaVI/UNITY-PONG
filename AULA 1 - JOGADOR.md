@@ -1,5 +1,3 @@
-Claro! Aqui está uma sugestão de reorganização do seu tutorial para um fluxo mais lógico e didático, separando as partes e evitando repetições. O foco é facilitar o entendimento, principalmente para quem está começando. Veja a proposta abaixo:
-
 ---
 
 # 🎮 PROJETO: Criando um Jogo de Ping Pong no Computador com Unity!
@@ -222,6 +220,3 @@ Você aprendeu:
 
 Na próxima aula: vamos adicionar **placar e reinício do jogo**!
 
----
-
-Se quiser adaptar mais alguma parte do tutorial ou deixá-lo ainda mais didático, é só pedir!
