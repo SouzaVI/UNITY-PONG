@@ -221,6 +221,175 @@ public bool jogador1;
 
 ---
 
+## 🎯 Parte 3 – Código da Bola
+
+### Criar um novo script chamado `Bola`:
+
+```csharp
+using UnityEngine;
+using UnityEngine.InputSystem; // Use the new Input System namespace
+
+public class Bola : MonoBehaviour
+{
+    public float velocidadeDaBola;
+    public float direcaoAleatoriaX;
+    public float direcaoAleatoriaY;
+    public Rigidbody2D oRigidbody2D;
+    public AudioSource SomDaBola;
+
+    void Start()
+    {
+        MoverBola();
+    }
+
+    void Update()
+    {
+        // Pode ser usado para futuras funcionalidades
+    }
+
+    private void MoverBola()
+    {
+        // Inicia o movimento da bola
+        oRigidbody2D.linearVelocity = new Vector2(velocidadeDaBola, velocidadeDaBola);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Toca som ao colidir
+        SomDaBola.Play();
+
+        // Altera levemente a velocidade da bola após colisão
+        oRigidbody2D.linearVelocity += new Vector2(direcaoAleatoriaX, direcaoAleatoriaY);
+    }
+}
+```
+
+---
+
+## 🛠️ Parte 4 – Conectando o Script aos Objetos
+
+1. Selecione `Jogador1` na Hierarquia
+
+   * Adicione o script `ControleDosJogadores`
+   * Marque a caixinha **jogador1 = true**
+   * Preencha no Inspector:
+
+     * `velocidadeDoJogador` (ex: 5)
+     * `yMinimo` (ex: -4)
+     * `yMaximo` (ex: 4)
+
+2. Repita para `Jogador2`
+
+   * **Desmarque** a caixinha `jogador1`
+   * Use os mesmos valores
+
+3. Selecione `Bola`
+
+   * Adicione o script `Bola`
+   * Preencha:
+
+     * `velocidadeDaBola`, `direcaoAleatoriaX`, `direcaoAleatoriaY`
+     * Arraste o `Rigidbody2D` e o `AudioSource` para os campos no Inspector
+
+---
+
+## ▶️ Parte 5 – Testando o Jogo
+
+* Clique no botão **Play**
+* Controles:
+
+  * Jogador 1: **W / S**
+  * Jogador 2: **↑ / ↓**
+  * A bola deve se mover e rebater com som
+
+---
+
+# 🧐 Conceitos de Programação Usados no Pong
+
+## 📆 1. `class` – O Projeto da Coisa
+
+> **Como explicar para crianças:**
+> Pense em **"class"** como a **receita de um bolo**. Ela mostra **como o objeto vai funcionar** no jogo.
+
+```csharp
+public class ControleDosJogadores : MonoBehaviour
+```
+
+Esse pedaço está dizendo:
+👉 “Aqui está o plano para fazer um jogador que se move para cima e para baixo.”
+
+---
+
+## ⚙️ 2. `void` – Uma Ação que Não Devolve Nada
+
+> **Como explicar:**
+> Imagina que você está dando uma ordem: "Vai lá e limpa seu quarto!"
+> Você só dá o comando, não espera nada de volta.
+
+```csharp
+void Update() { ... }
+void MoverJogador1() { ... }
+```
+
+Essas partes são **ações** que o jogo faz.
+
+---
+
+## 🔐 3. `private` e `public` – Segredo ou Não
+
+> **Como explicar:**
+
+* `public` (público) = **todo mundo pode ver e usar**
+* `private` (privado) = **só o código de dentro pode usar**
+
+```csharp
+public float velocidadeDoJogador;
+private void MoverJogador1() { ... }
+```
+
+---
+
+## 📊 4. `float` – Um Número com Vírgula
+
+> **Como explicar:**
+> `float` é um tipo de número que pode ter **vírgula**, tipo:
+
+* 3.5
+* 7.2
+* 0.1
+
+```csharp
+public float velocidadeDoJogador;
+```
+
+---
+
+## 🔢 5. `bool` – Verdadeiro ou Falso
+
+> **Como explicar:**
+> `bool` é como uma **chave de liga e desliga**, só tem duas opções:
+
+* **true** (ligado)
+* **false** (desligado)
+
+```csharp
+public bool jogador1;
+```
+
+---
+
+## 🔄 Explicando o Código Parte por Parte
+
+* `Update()`: roda o tempo todo, verifica se alguma tecla está sendo apertada
+* `MoverJogador1()` e `MoverJogador2()`: movem os jogadores
+* `Keyboard.current`: lê o teclado
+* `Translate(...)`: move a barra
+* `Clamp(...)`: impede que a barra ultrapasse os limites da tela
+* `Rigidbody2D.linearVelocity`: move a bola com velocidade constante
+* `OnCollisionEnter2D`: quando colide, toca som e muda o movimento
+
+---
+
 ## 🎓 Conclusão da Aula
 
 Você aprendeu:
@@ -228,6 +397,7 @@ Você aprendeu:
 * Criar objetos no Unity
 * Controlar um personagem com o teclado
 * Escrever e entender um código em C#
+* Fazer a bola se mover e colidir com som
 * Usar o novo sistema de entrada
 
-Na próxima aula: faremos a bola se mover e colidir com os jogadores!
+Na próxima aula: vamos adicionar **placar e reinício do jogo**!
