@@ -221,7 +221,7 @@ public bool jogador1;
 
 ---
 
-## 🎯 Parte 3 – Código da Bola
+## 🎯 Parte 5 – Código da Bola
 
 ### Criar um novo script chamado `Bola`:
 
