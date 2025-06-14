@@ -137,6 +137,33 @@ public class ControleDosJogadores : MonoBehaviour
 3. Clique na cor e escolha **preto**.
 
 ---
+## 7. Conceitos de Programação usados no Pong
+
+### `class` – O Projeto da Coisa
+- **Explicação:** É como a receita de um bolo: mostra como o objeto vai funcionar no jogo.
+- Exemplo: `public class ControleDosJogadores : MonoBehaviour`
+
+### `void` – Uma Ação que Não Devolve Nada
+- **Explicação:** É um comando para fazer algo, sem esperar nada em troca.
+- Exemplo: `void Update() { ... }`
+
+### `public` e `private` – Segredo ou Não
+- `public`: todo mundo pode ver e usar.
+- `private`: só o código de dentro pode usar.
+
+### `float` – Um Número com Vírgula
+- Exemplo: 3.5, 7.2, 0.1
+
+### `bool` – Verdadeiro ou Falso
+- Exemplo: true (ligado), false (desligado)
+
+### Explicando o Código Parte por Parte
+- `Update()`: roda o tempo todo, verifica se alguma tecla está sendo apertada.
+- `MoverJogador1()` e `MoverJogador2()`: movem os jogadores.
+- `Keyboard.current`: lê o teclado.
+- `Translate(...)`: move a barra.
+- `Clamp(...)`: impede que a barra ultrapasse os limites da tela.
+
 
 ## ✅ Teste Final
 
@@ -155,4 +182,3 @@ Vamos criar e programar a **bolinha** do jogo!
 
 ---
 
-Se desejar, posso também gerar um **PDF ilustrado** dessa apostila para você aplicar em sala ou imprimir. Deseja isso?
